@@ -1,14 +1,18 @@
-<div class="cover container">
-    <div class="cover-content">
-        {{#if @site.icon}}
-            <div class="cover-icon">
-                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
-            </div>
-        {{/if}}
-
-        {{#if @site.description}}
-            <div class="cover-description">{{@site.description}}</div>
-        {{/if}}
-
+{{#if @site.cover_image}}
+    <div class="site-cover u-overlay">
+        <img class="cover-image lazyload jarallax-img u-object-fit"
+            data-src="{{img_url @site.cover_image}}"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            alt="{{@site.title}}">
+        <div class="cover-content">
+            {{#if @site.icon}}
+                <div class="cover-icon">
+                    <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                </div>
+            {{/if}}
+            {{#if @site.description}}
+                <div class="cover-description">{{@site.description}}</div>
+            {{/if}}
+        </div>
     </div>
-</div>
+{{/if}}
